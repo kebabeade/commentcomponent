@@ -11,6 +11,6 @@ export default class FirstComponent extends React.Component <{}> {
         <p>This component shows the Logrocket logo.</p>
         <p>For more info on Logrocket, please visit https://logrocket.com </p>
       </div>
-    );
+    ); 
   }
 }
