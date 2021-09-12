@@ -1,11 +1,8 @@
 import * as React from "react";
 //import * as ReactDOM from "react-dom";
-import FirstComponent from './components/FirstComponent'
+import CommentingComponent from './components/CommentingComponent'
 
 const App = () => 
-    <div>
-      <h1>Hello, Welcome to React and TypeScript</h1>
-      <FirstComponent/>
-    </div>;
+< CommentingComponent/>
 
 export default App;
