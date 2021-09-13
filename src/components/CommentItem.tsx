@@ -1,22 +1,32 @@
 import * as React from "react";
 
-interface CommentItemProps  {
+interface IState2  {
+ 
+}
+
+interface IProps2  {
   idx: string,
   comment: string
 }
 
-export default class CommentItem extends React.Component <CommentItemProps,{}> {
+export default class CommentItem extends React.Component <IProps2,IState2> {
+  constructor(props:IProps2) {
+    super(props);
+  }
+
   render() {
     return (
-      <div>
-       <h5 className="text-muted mb-4">
-        <span className="badge badge-success"></span>{" "}
-        
-      </h5>
 
-        <h5>{this.props.comment}</h5>
-        
-      </div>
+
+<div className="media mb-3">
+
+<div className="media-body p-2 shadow-sm rounded bg-light border">
+ {/**  <small className="float-right text-muted">{time}</small>*/}
+ {/**  <h6 className="mt-0 mb-1 text-muted">{name}</h6>**/}
+  {this.props.comment}
+</div>
+
+</div>
     ); 
   }
 }

@@ -4,6 +4,7 @@ export default class CommentAddForm extends React.Component <{}> {
   render() {
     return (
       <React.Fragment>
+        
           <div className="form-group">
             <input
                className="form-control"

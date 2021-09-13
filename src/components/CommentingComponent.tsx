@@ -2,17 +2,51 @@ import * as React from "react";
 import CommentAddForm from './CommentAddForm'
 import CommentList from './CommentList'
 
-export default class CommentingComponent extends React.Component <{}> {
+const comments = [
+  { idx: 1, comment: "Make1"},
+  { idx: 2, comment: "Make2"}
+];
+
+interface IProps {
+  username:   string
+}
+
+interface IState{
+  commentList: [],
+  loading: boolean,
+  user:string
+}
+
+export default class CommentingComponent extends React.Component <IProps,IState> {
+  constructor(props:IProps) {
+    super(props);
+
+    this.state = {
+      commentList:[],
+      user:this.props.username,
+      loading:false,
+    };
+
+  }
+
+  componentDidMount() {
+    // loading
+    this.setState({ loading: true });
+  }
+  
   render() {
+    
+    
+
     return (
-      <div className="App container bg-light shadow">
-      <h4> Comments for Netvisor</h4>
+      <div className="CommentingComponentHeader container bg-light shadow">
+      <h4> Please add your comments</h4>
          <div className="row">
-          <div className="col-sm-4">
+          <div className="col-md-4 col-lg-4">
             < CommentAddForm/>
           </div>
-          <div className="col-sm-8">
-          < CommentList/>
+          <div className="col-md-4 col-lg-4">
+          < CommentList Items={this.state.commentList}/>
           </div>
         </div>
       </div>

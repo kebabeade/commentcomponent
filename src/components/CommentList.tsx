@@ -1,15 +1,32 @@
 import * as React from "react";
 import CommentItem from './CommentItem'
 
-export default class CommentList extends React.Component <{}> {
+interface IState {
+  loading: boolean,
+  Items: []
+}
+
+interface IProps {
+  Items: CommentItem[];
+}
+
+export default class CommentList extends React.Component <IProps,IState> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = {
+      loading: true,
+      Items: []
+    };
+  }
   render() {
     return (
+    
       <div className="commentList">
-        <CommentItem  idx="1" comment="comment1"/>
-        <CommentItem  idx="1" comment="comment2"/>
-        <CommentItem  idx="1" comment="comment3"/>
-        <CommentItem  idx="1" comment="comment4"/>
-    </div>
+      {this.props.Items.map((comment, idx) => (
+        <CommentItem idx={idx} comment={comment} />
+      ))}
+   </div> 
+ 
     ); 
   }
 }
