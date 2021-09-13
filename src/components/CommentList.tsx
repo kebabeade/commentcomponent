@@ -1,13 +1,14 @@
 import * as React from "react";
 import CommentItem from './CommentItem'
+import ICommentItem from './Commentinterfaces'
 
 interface IState {
   loading: boolean,
-  Items: []
+  Items: ICommentItem[]
 }
 
 interface IProps {
-  Items: CommentItem[];
+  Items: ICommentItem[];
 }
 
 export default class CommentList extends React.Component <IProps,IState> {
@@ -15,17 +16,17 @@ export default class CommentList extends React.Component <IProps,IState> {
     super(props);
     this.state = {
       loading: true,
-      Items: []
+      Items: this.props.Items
     };
   }
   render() {
     return (
     
+      
+     
       <div className="commentList">
-      {this.props.Items.map((comment, idx) => (
-        <CommentItem idx={idx} comment={comment} />
-      ))}
-   </div> 
+        <CommentItem commentitem={this.state.Items[0]}/>
+     </div> 
  
     ); 
   }
