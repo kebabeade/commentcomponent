@@ -19,9 +19,10 @@ export default class CommentItem extends React.Component <IProps,IState> {
 
 
 
+
 <div className="card" >
   <div className="card-body">
-    <h6 className="card-title">Timo</h6>
+    <h6 className="card-title">Timo: </h6>
     <p className="card-text">{this.props.commentitem.comment}</p>
   </div>
 </div>

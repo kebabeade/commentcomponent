@@ -1,8 +1,19 @@
 .card-body {
-    border-style: groove;
+    xborder-style:solid;
+    background-color: lightgrey;
+    xborder-radius: 4px;
+    xborder: 1px solid #ccc;
+    padding: 6px 12px;
+    min-height: 80px;
+    border-top: 0.125rem solid;
+  }
+
+  .card-title{
+    text-align: left;
+    color: rgb(77, 73, 73);
+  }
+  .CommentComponentHeader.container.bg-light.shadow {
     background-color: lightgrey;
   }
-  
-  .CommentComponentHeader.container.bg-light.shadow {
-    border-style: groove;
-  }
+
+ 

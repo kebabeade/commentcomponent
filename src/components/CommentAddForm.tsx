@@ -44,20 +44,27 @@ export default class CommentAddForm extends React.Component <IProps,IState> {
         e.preventDefault();
 
         this.props.addComment(this.state.comment);
-
+        
+        this.state = {
+          loading: true,
+          comment:'',
+          name:''
+        };
       }    
 
   render() {
     return (
       <React.Fragment>
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.onSubmit} className="form-groups">
           <div className="form-group">
             <input
-               className="form-control"
+              className="form-control"
               placeholder="😎 Your Name"
               name="name"
               type="text"
               onChange={this.handleChangeName}
+              value={this.state.name}
+              maxLength={40}
             />
           </div>
 
@@ -67,13 +74,16 @@ export default class CommentAddForm extends React.Component <IProps,IState> {
               placeholder="🤬 Your Comment"
               name="message"
               onChange={this.handleChangeComment}
+              value={this.state.comment}
+              maxLength={255}
             />
           </div>
 
  
           <div className="form-group">
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" disabled={!this.state.comment ||!this.state.name }>
               Comment &#10148;
+              
             </button>
           </div>
         </form>

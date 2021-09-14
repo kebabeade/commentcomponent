@@ -4,7 +4,6 @@ import ICommentItem from './Commentinterfaces'
 
 interface IState {
   loading: boolean,
-  Items: ICommentItem[]
 }
 
 interface IProps {
@@ -16,8 +15,7 @@ export default class CommentList extends React.Component <IProps,IState> {
     super(props);
     this.state = {
       loading: true,
-      Items: this.props.Items
-    };
+      };
 
     
   }
@@ -25,7 +23,12 @@ export default class CommentList extends React.Component <IProps,IState> {
     return (
       <div className="commentList">
 
-      {this.state.Items.map((commentitem) => (
+      <h5 className="commentcount" >
+        <span className="badge badge-success">{this.props.Items.length}</span>{" "}
+        Comment{this.props.Items.length > 0 ? "s" : ""}
+      </h5>
+      
+      {this.props.Items.map((commentitem) => (
         <CommentItem commentitem={commentitem}/>
       ))}
      </div> 
