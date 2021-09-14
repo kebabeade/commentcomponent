@@ -2,7 +2,7 @@ import * as React from "react";
 import CommentAddForm from './CommentAddForm'
 import CommentList from './CommentList'
 import ICommentItem from './Commentinterfaces'
-import './CommentingComponent.css';
+import './CommentComponent.css';
 
 interface IProps {
   username:   string
@@ -14,7 +14,7 @@ interface IState{
   user:string
 }
 
-export default class CommentingComponent extends React.Component <IProps,IState> {
+export default class CommentComponent extends React.Component <IProps,IState> {
   constructor(props:IProps) {
     super(props);
 
@@ -56,7 +56,7 @@ export default class CommentingComponent extends React.Component <IProps,IState>
 
  
     return (
-      <div className="CommentingComponentHeader container bg-light shadow">
+      <div className="CommentComponentHeader container bg-light shadow">
       <h4> Please add your comments</h4>
          <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-12">

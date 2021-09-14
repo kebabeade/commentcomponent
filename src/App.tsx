@@ -1,8 +1,8 @@
 import * as React from "react";
 //import * as ReactDOM from "react-dom";
-import CommentingComponent from './components/CommentingComponent'
+import CommentComponent from './components/CommentComponent'
 
 const App = () => 
-< CommentingComponent username="Seppo"/>
+< CommentComponent username="Seppo"/>
 
 export default App;
