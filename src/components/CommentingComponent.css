@@ -1,0 +1,8 @@
+.card-body {
+    border-style: groove;
+    background-color: lightgrey;
+  }
+  
+  .CommentingComponentHeader.container.bg-light.shadow {
+    border-style: groove;
+  }

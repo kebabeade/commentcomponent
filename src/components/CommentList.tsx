@@ -18,14 +18,16 @@ export default class CommentList extends React.Component <IProps,IState> {
       loading: true,
       Items: this.props.Items
     };
+
+    
   }
   render() {
     return (
-    
-      
-     
       <div className="commentList">
-        <CommentItem commentitem={this.state.Items[0]}/>
+
+      {this.state.Items.map((commentitem) => (
+        <CommentItem commentitem={commentitem}/>
+      ))}
      </div> 
  
     ); 

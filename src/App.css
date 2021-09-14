@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #dae0d1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,9 +28,7 @@
   color: #61dafb;
 }
 
-.CommentingComponentHeader.container.bg-light.shadow {
-  border-style: groove;
-}
+
 
 @keyframes App-logo-spin {
   from {

@@ -2,13 +2,7 @@ import * as React from "react";
 import CommentAddForm from './CommentAddForm'
 import CommentList from './CommentList'
 import ICommentItem from './Commentinterfaces'
-
-
-
-const comments = [
-  { idx: 1, comment: "Make1"},
-  { idx: 2, comment: "Make2"}
-];
+import './CommentingComponent.css';
 
 interface IProps {
   username:   string
@@ -24,21 +18,38 @@ export default class CommentingComponent extends React.Component <IProps,IState>
   constructor(props:IProps) {
     super(props);
 
-    
-
     this.state = {
-      commentList:[{idx:"1",comment:"comment1"},{idx:"2",comment:"comment2"}],
+      commentList:[{idx:"1",comment:"comment1"}],
       user:this.props.username,
       loading:false,
     };
 
+    this.addComment = this.addComment.bind(this);
   }
 
   componentDidMount() {
     // loading
-    this.setState({ loading: true });
+    //this.setState({ loading: true });
   
   }
+
+   /**
+   * Add new comment
+   * @param {Object} comment
+   */
+    addComment(comment:string) {
+
+      let NewCommentItem: ICommentItem = {
+        idx: "1",
+        comment: comment,
+      };
+ 
+      this.setState({
+        loading: false,
+        commentList: [...this.state.commentList, NewCommentItem]
+        
+      });
+    }
   
   render() {
     
@@ -48,11 +59,9 @@ export default class CommentingComponent extends React.Component <IProps,IState>
       <div className="CommentingComponentHeader container bg-light shadow">
       <h4> Please add your comments</h4>
          <div className="row">
-          <div className="col-md-4 col-lg-4">
-            < CommentAddForm/>
-          </div>
-          <div className="col-md-4 col-lg-4">
-          < CommentList Items={this.state.commentList}/>
+          <div className="col-sm-12 col-md-12 col-lg-12">
+            < CommentAddForm addComment={this.addComment}/>
+            < CommentList Items={this.state.commentList} />
           </div>
         </div>
       </div>
