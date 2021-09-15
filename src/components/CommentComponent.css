@@ -1,8 +1,5 @@
 .card-body {
-    xborder-style:solid;
-    background-color: lightgrey;
-    xborder-radius: 4px;
-    xborder: 1px solid #ccc;
+    background-color: lightblue;
     padding: 6px 12px;
     min-height: 80px;
     border-top: 0.125rem solid;
@@ -11,9 +8,20 @@
   .card-title{
     text-align: left;
     color: rgb(77, 73, 73);
-  }
-  .CommentComponentHeader.container.bg-light.shadow {
-    background-color: lightgrey;
+
   }
 
+  .card-text{
+    margin: 0 19px 10px;
+    font-style: italic;
+  }
+
+  .CommentComponentHeader.container{
+    background-color: lightblue;
+  }
+
+  textarea.form-control {
+    height: auto;
+    resize: vertical;
+}
  

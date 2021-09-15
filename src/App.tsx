@@ -3,6 +3,6 @@ import * as React from "react";
 import CommentComponent from './components/CommentComponent'
 
 const App = () => 
-< CommentComponent username="Seppo"/>
+< CommentComponent/>
 
 export default App;

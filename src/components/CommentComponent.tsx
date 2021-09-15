@@ -5,13 +5,11 @@ import ICommentItem from './Commentinterfaces'
 import './CommentComponent.css';
 
 interface IProps {
-  username:   string
+  
 }
 
 interface IState{
-  commentList: ICommentItem[],
-  loading: boolean,
-  user:string
+  commentList: ICommentItem[]
 }
 
 export default class CommentComponent extends React.Component <IProps,IState> {
@@ -19,35 +17,26 @@ export default class CommentComponent extends React.Component <IProps,IState> {
     super(props);
 
     this.state = {
-      commentList:[{idx:"1",comment:"comment1"}],
-      user:this.props.username,
-      loading:false,
+      commentList:[{comment:"I Love this tool!",username:"Seppo"}]
     };
 
     this.addComment = this.addComment.bind(this);
   }
 
-  componentDidMount() {
-    // loading
-    //this.setState({ loading: true });
-  
-  }
-
-   /**
+     /**
    * Add new comment
-   * @param {Object} comment
+   * @param {string} comment
+   * @param {string} username
    */
-    addComment(comment:string) {
+    addComment(comment:string,username:string) {
 
       let NewCommentItem: ICommentItem = {
-        idx: "1",
         comment: comment,
+        username:username
       };
  
       this.setState({
-        loading: false,
         commentList: [...this.state.commentList, NewCommentItem]
-        
       });
     }
   
@@ -57,7 +46,13 @@ export default class CommentComponent extends React.Component <IProps,IState> {
  
     return (
       <div className="CommentComponentHeader container bg-light shadow">
-      <h4> Please add your comments</h4>
+
+        <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-12">
+            <h4> Please add your comments</h4>
+         </div>
+         </div>
+
          <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-12">
             < CommentAddForm addComment={this.addComment}/>

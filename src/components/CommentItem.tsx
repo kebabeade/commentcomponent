@@ -17,15 +17,12 @@ export default class CommentItem extends React.Component <IProps,IState> {
   render() {
     return (
 
-
-
-
-<div className="card" >
-  <div className="card-body">
-    <h6 className="card-title">Timo: </h6>
-    <p className="card-text">{this.props.commentitem.comment}</p>
-  </div>
-</div>
+    <div className="card" >
+      <div className="card-body">
+        <h6 className="card-title">{this.props.commentitem.username}</h6>
+        <p className="card-text">"{this.props.commentitem.comment}"</p>
+      </div>
+    </div>
 
 
     ); 

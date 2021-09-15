@@ -5,7 +5,6 @@ interface IProps{
 }
 
 interface IState{
-  loading: boolean,
   comment:string,
   name:string
 }
@@ -17,7 +16,6 @@ export default class CommentAddForm extends React.Component <IProps,IState> {
     constructor(props:IProps) {
       super(props);
       this.state = {
-        loading: true,
         comment:'',
         name:''
       };
@@ -43,13 +41,10 @@ export default class CommentAddForm extends React.Component <IProps,IState> {
         // prevent default form submission
         e.preventDefault();
 
-        this.props.addComment(this.state.comment);
+        this.props.addComment(this.state.comment,this.state.name);
         
-        this.state = {
-          loading: true,
-          comment:'',
-          name:''
-        };
+        this.setState({ comment:'',name:'' });
+       
       }    
 
   render() {
@@ -59,7 +54,7 @@ export default class CommentAddForm extends React.Component <IProps,IState> {
           <div className="form-group">
             <input
               className="form-control"
-              placeholder="😎 Your Name"
+              placeholder="Your Name"
               name="name"
               type="text"
               onChange={this.handleChangeName}
@@ -71,8 +66,8 @@ export default class CommentAddForm extends React.Component <IProps,IState> {
           <div className="form-group">
             <textarea
               className="form-control"
-              placeholder="🤬 Your Comment"
-              name="message"
+              placeholder="Your Comment"
+              name="comment"
               onChange={this.handleChangeComment}
               value={this.state.comment}
               maxLength={255}
@@ -82,8 +77,7 @@ export default class CommentAddForm extends React.Component <IProps,IState> {
  
           <div className="form-group">
             <button className="btn btn-primary" disabled={!this.state.comment ||!this.state.name }>
-              Comment &#10148;
-              
+              Add Comment           
             </button>
           </div>
         </form>

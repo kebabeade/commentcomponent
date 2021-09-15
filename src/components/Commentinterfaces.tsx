@@ -1,6 +1,6 @@
  interface ICommentItem{
-    idx:string,
     comment:string
+    username:string
   }
 
   export default ICommentItem;
