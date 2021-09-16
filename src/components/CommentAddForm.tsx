@@ -6,7 +6,8 @@ interface IProps{
 
 interface IState{
   comment:string,
-  name:string
+  name:string,
+  date:Date
 }
 
 
@@ -17,7 +18,8 @@ export default class CommentAddForm extends React.Component <IProps,IState> {
       super(props);
       this.state = {
         comment:'',
-        name:''
+        name:'',
+        date:new Date()
       };
 
       this.handleChangeName = this.handleChangeName.bind(this);
@@ -25,15 +27,21 @@ export default class CommentAddForm extends React.Component <IProps,IState> {
       this.onSubmit = this.onSubmit.bind(this);
     };
       
+   /**
+   * Stores the name
+   */
       handleChangeName (evt:any) {
         if (evt !== null && evt.target!==null) {
-        this.setState({ name: evt.target.value });
+          this.setState({ name: evt.target.value });
         }
       }
 
+   /**
+   * Stores the comment
+   */
       handleChangeComment (evt:any) {
         if (evt !== null && evt.target!==null) {
-        this.setState({ comment: evt.target.value });
+          this.setState({ comment: evt.target.value });
         }
       }
     
@@ -41,15 +49,16 @@ export default class CommentAddForm extends React.Component <IProps,IState> {
         // prevent default form submission
         e.preventDefault();
 
+        /** add comment to list */
         this.props.addComment(this.state.comment,this.state.name);
         
+        /** empty the form fields */
         this.setState({ comment:'',name:'' });
        
       }    
 
   render() {
     return (
-      <React.Fragment>
         <form onSubmit={this.onSubmit} className="form-groups">
           <div className="form-group">
             <input
@@ -73,7 +82,6 @@ export default class CommentAddForm extends React.Component <IProps,IState> {
               maxLength={255}
             />
           </div>
-
  
           <div className="form-group">
             <button className="btn btn-primary" disabled={!this.state.comment ||!this.state.name }>
@@ -81,7 +89,7 @@ export default class CommentAddForm extends React.Component <IProps,IState> {
             </button>
           </div>
         </form>
-      </React.Fragment>
+      
     ); 
   }
 }

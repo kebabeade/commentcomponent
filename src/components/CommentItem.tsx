@@ -12,15 +12,21 @@ interface IProps {
 export default class CommentItem extends React.Component <IProps,IState> {
   constructor(props:IProps) {
     super(props);
+  
   }
 
   render() {
-    return (
 
+    
+
+    return (     
     <div className="card" >
       <div className="card-body">
-        <h6 className="card-title">{this.props.commentitem.username}</h6>
-        <p className="card-text">"{this.props.commentitem.comment}"</p>
+
+        <h6 className="card-title">{this.props.commentitem.username} {this.props.commentitem.date}</h6>
+        <h6 className="card-title"> </h6>
+        
+        <h5 className="card-text">"{this.props.commentitem.comment}"</h5>
       </div>
     </div>
 

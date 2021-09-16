@@ -5,7 +5,7 @@ import ICommentItem from './Commentinterfaces'
 import './CommentComponent.css';
 
 interface IProps {
-  
+ 
 }
 
 interface IState{
@@ -15,24 +15,24 @@ interface IState{
 export default class CommentComponent extends React.Component <IProps,IState> {
   constructor(props:IProps) {
     super(props);
-
+    /**create some default comments */
     this.state = {
-      commentList:[{comment:"I Love this tool!",username:"Seppo"}]
+      commentList:[{comment:"I Love this tool!",username:"Seppo",date:new Date(2021,9,15).toISOString().slice(0, 10), key:1}]
     };
 
     this.addComment = this.addComment.bind(this);
   }
 
      /**
-   * Add new comment
-   * @param {string} comment
-   * @param {string} username
+   * Function adds new comment to the list
    */
     addComment(comment:string,username:string) {
 
       let NewCommentItem: ICommentItem = {
         comment: comment,
-        username:username
+        username:username,
+        date:new Date().toISOString().slice(0, 10),
+        key:this.state.commentList.length+1
       };
  
       this.setState({

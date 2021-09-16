@@ -3,7 +3,7 @@ import CommentItem from './CommentItem'
 import ICommentItem from './Commentinterfaces'
 
 interface IState {
-  loading: boolean,
+
 }
 
 interface IProps {
@@ -13,11 +13,7 @@ interface IProps {
 export default class CommentList extends React.Component <IProps,IState> {
   constructor(props: IProps) {
     super(props);
-    this.state = {
-      loading: true,
-      };
-
-    
+   
   }
   render() {
     return (
@@ -29,7 +25,7 @@ export default class CommentList extends React.Component <IProps,IState> {
       </h5>
       
       {this.props.Items.map((commentitem) => (
-        <CommentItem commentitem={commentitem}/>
+        <CommentItem key={commentitem.key} commentitem={commentitem}/>
       ))}
      </div> 
  
