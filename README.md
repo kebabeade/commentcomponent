@@ -1,3 +1,3 @@
-CommentComponent
+# CommentComponent
 
-This project is a prototype of a component which can be used to post comments
+This project is a prototype of component which can be used to publish user comments
