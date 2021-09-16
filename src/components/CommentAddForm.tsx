@@ -1,3 +1,6 @@
+/**
+ * Component which handles adding new comment
+ */
 import * as React from "react";
 
 interface IProps{

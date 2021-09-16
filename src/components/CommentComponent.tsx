@@ -1,3 +1,6 @@
+/**
+ * Container of ComponentAddForm and CommentList
+ */
 import * as React from "react";
 import CommentAddForm from './CommentAddForm'
 import CommentList from './CommentList'
@@ -17,7 +20,7 @@ export default class CommentComponent extends React.Component <IProps,IState> {
     super(props);
     /**create some default comments */
     this.state = {
-      commentList:[{comment:"I Love this tool!",username:"Seppo",date:new Date(2021,9,15).toISOString().slice(0, 10), key:1}]
+      commentList:[{comment:"I Love this tool!",username:"Seppo",date:new Date(2021,1,12).toISOString().slice(0, 10), key:1}]
     };
 
     this.addComment = this.addComment.bind(this);
