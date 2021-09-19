@@ -8,7 +8,7 @@ import ICommentItem from './Commentinterfaces'
 import './CommentComponent.css';
 
 interface IProps {
- 
+
 }
 
 interface IState{
@@ -59,6 +59,10 @@ export default class CommentComponent extends React.Component <IProps,IState> {
          <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-12">
             < CommentAddForm addComment={this.addComment}/>
+          </div>
+        </div>
+         <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-12">
             < CommentList Items={this.state.commentList} />
           </div>
         </div>

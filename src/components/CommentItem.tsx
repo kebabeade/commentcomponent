@@ -20,8 +20,6 @@ export default class CommentItem extends React.Component <IProps,IState> {
 
   render() {
 
-    
-
     return (     
     <div className="card" >
       <div className="card-body">

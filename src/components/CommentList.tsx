@@ -1,3 +1,6 @@
+/**
+ * Component which handles rendering Comments card list
+ */
 import * as React from "react";
 import CommentItem from './CommentItem'
 import ICommentItem from './Commentinterfaces'
